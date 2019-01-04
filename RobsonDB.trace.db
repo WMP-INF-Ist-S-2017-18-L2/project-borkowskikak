@@ -1,0 +1,24 @@
+2019-01-04 10:52:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "PALIWO" nie istnieje
+Table "PALIWO" not found; SQL statement:
+DROP TABLE `PALIWO`  [42102-193]
+2019-01-04 10:52:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "POJAZD" nie istnieje
+Table "POJAZD" not found; SQL statement:
+DROP TABLE `POJAZD`  [42102-193]
+2019-01-04 10:52:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "TYP POJAZDU" nie istnieje
+Table "TYP POJAZDU" not found; SQL statement:
+DROP TABLE `TYP POJAZDU`  [42102-193]
+2019-01-04 10:52:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "FIRMA" nie istnieje
+Table "FIRMA" not found; SQL statement:
+DROP TABLE `FIRMA`  [42102-193]
+2019-01-04 10:52:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "POBIERAJACY" nie istnieje
+Table "POBIERAJACY" not found; SQL statement:
+DROP TABLE `Pobierajacy`  [42102-193]
+2019-01-04 10:52:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "PALIWO INNE LIST VIEW" nie istnieje
+Table "PALIWO INNE LIST VIEW" not found; SQL statement:
+DROP TABLE `Paliwo Inne List View`  [42102-193]
