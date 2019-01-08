@@ -14,12 +14,12 @@ import javafx.beans.property.ObjectProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
 import org.omg.CORBA.portable.ApplicationException;
 import pl.robson.Utils.Converters.ConverterUbezpieczenie;
-import pl.robson.database.dao.FirmaDao;
+import pl.robson.Utils.Utils;
 import pl.robson.database.dao.UbezpieczenieDao;
 import pl.robson.database.dbutils.DbManager;
-import pl.robson.database.modele.Firma;
 import pl.robson.database.modele.Ubezpieczenie;
 
 /**
@@ -27,61 +27,54 @@ import pl.robson.database.modele.Ubezpieczenie;
  * @author Mati
  */
 public class UbezpieczenieModel {
-    private ObservableList<UbezpieczenieFX> ubezpieczenieList = FXCollections.observableArrayList();
-    private ObjectProperty<UbezpieczenieFX> ubezpieczenieObject = new SimpleObjectProperty<>();
+    private ObservableList<UbezpieczenieFX> ubezpieczenieObservableList = FXCollections.observableArrayList();
+    private ObjectProperty<UbezpieczenieFX> ubezpieczenieObjectProperty = new SimpleObjectProperty<>();
+    
     
     public  void init() throws ApplicationException{
         UbezpieczenieDao ubezpieczenieDao = new UbezpieczenieDao(DbManager.getConnectionSource());
-        List<Ubezpieczenie> ubezpieczenie = ubezpieczenieDao.queryForAll(Ubezpieczenie.class);
-        this.ubezpieczenieList.clear(); 
-                ubezpieczenie.forEach(c->{
-                    UbezpieczenieFX ubezpieczenieFX = new UbezpieczenieFX();
-                    ubezpieczenieFX.setId(c.getId());
-                    ubezpieczenieFX.setUbezpieczenie(c.getName());
-                    ubezpieczenieFX.setOdDate(LocalDate.MAX);
-                    ubezpieczenieFX.setDoDate(LocalDate.MAX);
-                    this.ubezpieczenieList.add(ubezpieczenieFX);
+        List<Ubezpieczenie> ubezpieczenieList = ubezpieczenieDao.queryForAll(Ubezpieczenie.class);
+        this.ubezpieczenieObservableList.clear(); 
+                ubezpieczenieList.forEach(ubezpieczenie->{
+                    UbezpieczenieFX ubezpieczenieFX = ConverterUbezpieczenie.convertToubezpieczenieFX(ubezpieczenie);                  
+                    this.ubezpieczenieObservableList.add(ubezpieczenieFX);
                     
                 });
                 DbManager.closeConnectionSource();
     }
     
-    public void saveUbezpieczenietoDB(double name) throws ApplicationException{
+    public void saveUbezpieczenietoDB() throws ApplicationException{
  
         UbezpieczenieDao ubezpieczenieDao = new UbezpieczenieDao(DbManager.getConnectionSource());
-        Ubezpieczenie ubezpieczenie = new Ubezpieczenie();
-        
-        ubezpieczenie.setName(name);
+        Ubezpieczenie ubezpieczenie = ConverterUbezpieczenie.convertToubezpieczenie(this.getUbezpieczenieObject());
         try {
             ubezpieczenieDao.creatOrUpdate(ubezpieczenie);
         } catch (ApplicationException ex) {
             Logger.getLogger(UbezpieczenieModel.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-            DbManager.closeConnectionSource();
-            init();
+            DbManager.closeConnectionSource();    
     }
    
     
     
     public ObservableList<UbezpieczenieFX> getUbezpieczenieList() {
-        return ubezpieczenieList;
+        return ubezpieczenieObservableList;
     }
 
-    public void setUbezpieczenieList(ObservableList<UbezpieczenieFX> ubezpieczenieList) {
-        this.ubezpieczenieList = ubezpieczenieList;
+    public void setUbezpieczenieList(ObservableList<UbezpieczenieFX> ubezpieczenieObservableList) {
+        this.ubezpieczenieObservableList = ubezpieczenieObservableList;
     }
 
     public UbezpieczenieFX getUbezpieczenieObject() {
-        return ubezpieczenieObject.get();
+        return ubezpieczenieObjectProperty.get();
     }
 
     public ObjectProperty<UbezpieczenieFX> ubezpieczenieObjectProperty() {
-        return ubezpieczenieObject;
+        return ubezpieczenieObjectProperty;
     }
 
     public void setUbezpieczenieObject(UbezpieczenieFX ubezpieczenieObject) {
-        this.ubezpieczenieObject.set(ubezpieczenieObject);
+        this.ubezpieczenieObjectProperty.set(ubezpieczenieObject);
     }
     
 }

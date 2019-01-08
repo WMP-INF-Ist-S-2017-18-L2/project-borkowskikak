@@ -30,3 +30,95 @@ SELECT * FROM `Ubezpieczenie`  [42102-193]
 org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
 Table "UBEZPIECZENIE" not found; SQL statement:
 SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 21:52:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 22:10:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 22:10:56 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 22:14:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 22:23:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 22:42:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 22:46:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 22:54:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 23:00:58 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 23:12:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 23:12:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 23:14:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 23:15:46 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 23:16:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 23:22:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 23:24:41 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 23:59:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-09 00:01:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-09 00:07:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-09 00:13:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-09 00:14:27 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-09 00:15:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-09 00:25:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]

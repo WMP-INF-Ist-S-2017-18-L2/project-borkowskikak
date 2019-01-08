@@ -18,8 +18,8 @@ public class Ubezpieczenie implements BaseModel {
     
     @DatabaseField(generatedId = true)
     private int id;
-    @DatabaseField(columnName = "Ubezpieczenie", canBeNull = false)
-    private double name;
+    @DatabaseField(columnName = "Ubezpieczenie", canBeNull = true)
+    private double wartosc;
     
     @DatabaseField(columnName = "Data od :")
     private Date DataOD;
@@ -38,11 +38,11 @@ public class Ubezpieczenie implements BaseModel {
     }
 
     public double getName() {
-        return name;
+        return wartosc;
     }
 
-    public void setName(double name) {
-        this.name = name;
+    public void setName(double wartosc) {
+        this.wartosc = wartosc;
     }
 
     public Date getDataOD() {

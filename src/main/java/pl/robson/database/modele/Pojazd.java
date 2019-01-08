@@ -51,8 +51,8 @@ public class Pojazd implements BaseModel{
     @DatabaseField(columnName = "WYPLATA", canBeNull = true)
     private String wyplata;
 
-    @DatabaseField(columnName = "PRZYCHOD", canBeNull = true)
-    private String przychod;
+    @DatabaseField(columnName = "PRZYCHOD",canBeNull = true,foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true)
+    private Przychod przychod;
     
     public Pojazd() {
     }
@@ -171,11 +171,11 @@ public class Pojazd implements BaseModel{
         this.wyplata = wyplata;
     }
 
-    public String getPrzychod() {
+    public Przychod getPrzychod() {
         return przychod;
     }
 
-    public void setPrzychod(String przychod) {
+    public void setPrzychod(Przychod przychod) {
         this.przychod = przychod;
     }
 
@@ -187,6 +187,7 @@ public class Pojazd implements BaseModel{
 
     public Firma getFirma() {
         return firma;
+        
     }
     
     

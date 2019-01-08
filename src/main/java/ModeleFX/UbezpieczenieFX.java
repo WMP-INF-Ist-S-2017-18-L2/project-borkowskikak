@@ -19,7 +19,7 @@ import javafx.beans.property.SimpleObjectProperty;
  */
 public class UbezpieczenieFX {
     private IntegerProperty id = new SimpleIntegerProperty();
-    private DoubleProperty ubezpieczenie = new SimpleDoubleProperty();
+    private DoubleProperty wartosc = new SimpleDoubleProperty();
     private ObjectProperty<LocalDate> odDate = new SimpleObjectProperty<>();
     private ObjectProperty<LocalDate> doDate = new SimpleObjectProperty<>();
     
@@ -37,15 +37,15 @@ public class UbezpieczenieFX {
     }
 
     public double getUbezpieczenie() {
-        return ubezpieczenie.get();
+        return wartosc.get();
     }
 
     public DoubleProperty ubezpieczenieProperty() {
-        return ubezpieczenie;
+        return wartosc;
     }
 
     public void setUbezpieczenie(double ubezpieczenie) {
-        this.ubezpieczenie.set(ubezpieczenie);
+        this.wartosc.set(ubezpieczenie);
     }
 
     public LocalDate getOdDate() {
@@ -70,6 +70,10 @@ public class UbezpieczenieFX {
 
     public void setDoDate(LocalDate doDate) {
         this.doDate.set(doDate);
+    }
+
+    public ObjectProperty<LocalDate> doDateProperty(ObjectProperty<LocalDate> valueProperty) {
+        return doDate;
     }
 
     

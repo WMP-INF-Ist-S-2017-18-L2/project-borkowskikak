@@ -39,7 +39,7 @@ public class PojazdModel {
     public void init() throws ApplicationException{
         initTypPojazduList();
         initFirmaList();
-        initUbezpieczenie();
+       // initUbezpieczenie();
     }
 
     
@@ -77,15 +77,15 @@ public class PojazdModel {
     
     }
     
-    private void initUbezpieczenie() throws ApplicationException{
+     private void initUbezpieczenie() throws ApplicationException{
         UbezpieczenieDao ubezpieczenieDao = new UbezpieczenieDao(DbManager.getConnectionSource());
         List<Ubezpieczenie> ubezpieczenieList = ubezpieczenieDao.queryForAll(Ubezpieczenie.class);
-        ubezpieczenieList.clear();
+        UbezpieczenieList.clear();
         ubezpieczenieList.forEach(c->{
             UbezpieczenieFX ubezpieczenieFX = new UbezpieczenieFX();
             ubezpieczenieFX.setId(c.getId());
             ubezpieczenieFX.setUbezpieczenie(c.getName());
-            ubezpieczenieFX.setOdDate(LocalDate.MAX);
+            ubezpieczenieFX.setOdDate(LocalDate.MIN);
             ubezpieczenieFX.setDoDate(LocalDate.MAX);
             
             UbezpieczenieList.add(ubezpieczenieFX);

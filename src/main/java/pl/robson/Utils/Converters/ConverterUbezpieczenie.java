@@ -20,8 +20,8 @@ public class ConverterUbezpieczenie {
         UbezpieczenieFX ubezpieczenieFX = new UbezpieczenieFX();
         ubezpieczenieFX.setId(ubezpieczenie.getId());
         ubezpieczenieFX.setUbezpieczenie(ubezpieczenie.getName());
-        ubezpieczenieFX.setOdDate(LocalDate.MIN);
-        ubezpieczenieFX.setDoDate(LocalDate.MAX);     
+        ubezpieczenieFX.setOdDate(Utils.convertToLocalDate(ubezpieczenie.getDataOD()));
+        ubezpieczenieFX.setDoDate(Utils.convertToLocalDate(ubezpieczenie.getDataDO()));  
         return ubezpieczenieFX;   
     }
 

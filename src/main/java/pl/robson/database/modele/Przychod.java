@@ -19,7 +19,7 @@ public class Przychod {
     @DatabaseField(generatedId = true)
     private int id;
     @DatabaseField(columnName = "Przychod", canBeNull = false)
-    private int name;
+    private int wartosc;
     
     @DatabaseField(columnName = "Data :")
     private Date Data;  
@@ -35,12 +35,12 @@ public class Przychod {
         this.id = id;
     }
 
-    public int getName() {
-        return name;
+    public int getWartosc() {
+        return wartosc;
     }
 
-    public void setName(int name) {
-        this.name = name;
+    public void setWartosc(int wartosc) {
+        this.wartosc = wartosc;
     }
 
     public Date getData() {
