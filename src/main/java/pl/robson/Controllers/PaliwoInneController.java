@@ -9,6 +9,7 @@ import ModeleFX.paliwoInneFX;
 import ModeleFX.paliwoInneModel;
 import ModeleFX.pobierajacyInneFX;
 import ModeleFX.pobierajacyInneModel;
+import static com.itextpdf.kernel.pdf.PdfName.T;
 import java.net.URL;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
@@ -23,6 +24,8 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.util.StringConverter;
+import javafx.util.converter.NumberStringConverter;
 import org.omg.CORBA.portable.ApplicationException;
 
 
@@ -51,13 +54,13 @@ public class PaliwoInneController{
     @FXML
     private TableColumn<paliwoInneFX, LocalDate> dataPaliwoInneTabelView;
     @FXML
-    private TableColumn<paliwoInneFX, String> litryPaliwoInneTableView;
+    private TableColumn<paliwoInneFX, Number> litryPaliwoInneTableView;
     @FXML
-    private TableColumn<paliwoInneFX, String> cenaNettoPaliwoInneTableView;
+    private TableColumn<paliwoInneFX, Number> cenaNettoPaliwoInneTableView;
     @FXML
     private TableColumn<paliwoInneFX, pobierajacyInneFX> pobierajacyPaliwoInneTableView;
     @FXML
-    private TableColumn<paliwoInneFX,String> kosztPaliwoInneTableView;
+    private TableColumn<paliwoInneFX, Number> kosztPaliwoInneTableView;
     @FXML
     private pobierajacyInneModel pobierajacyInneModel;
     
@@ -86,15 +89,15 @@ public class PaliwoInneController{
 
         
             this.paliwoInneModel.paliwoInneObjectProperty.get().pobierajacyComboBbobox().bind(this.pobierajacyComboBox.valueProperty());
-            this.paliwoInneModel.paliwoInneObjectProperty.get().iloscLitrowPaliwoInneTextFieldProperty().bind(this.iloscLitrowPaliwoInneTextField.textProperty());
-            this.paliwoInneModel.paliwoInneObjectProperty.get().cenaNettoPaliwoInneTextFieldProperty().bind(this.cenaNettoPaliwoInneTextField.textProperty());
+            this.iloscLitrowPaliwoInneTextField.textProperty().bindBidirectional(this.paliwoInneModel.getPaliwoInneObjectProperty().get().getIloscLitrowPaliwoInneTextField(), new NumberStringConverter());
+            this.cenaNettoPaliwoInneTextField.textProperty().bindBidirectional(this.paliwoInneModel.getPaliwoInneObjectProperty().get().getCenaNettoPaliwoInneTextField(), new NumberStringConverter());
             this.paliwoInneModel.paliwoInneObjectProperty.get().releaseDateProperty().bind(this.releaseDatePicker.valueProperty());
             this.paliwoInneTableView.setItems(this.paliwoInneModel.getPaliwoInneFXObservableList());
             this.litryPaliwoInneTableView.setCellValueFactory(cellData->cellData.getValue().getIloscLitrowPaliwoInneTextField());
             this.cenaNettoPaliwoInneTableView.setCellValueFactory(cellData->cellData.getValue().getCenaNettoPaliwoInneTextField());
             this.pobierajacyPaliwoInneTableView.setCellValueFactory(cellData -> cellData.getValue().pobierajacyComboBbobox());
             this.dataPaliwoInneTabelView.setCellValueFactory(cellData -> cellData.getValue().releaseDateProperty());
-            //this.kosztPaliwoInneTableView.setCellValueFactory(cellData -> cellData.getValue().getKosztPropoerty());
+            this.kosztPaliwoInneTableView.setCellValueFactory(cellData -> cellData.getValue().getKoszt());
       
             
   

@@ -22,3 +22,11 @@ DROP TABLE `Pobierajacy`  [42102-193]
 org.h2.jdbc.JdbcSQLException: Tabela "PALIWO INNE LIST VIEW" nie istnieje
 Table "PALIWO INNE LIST VIEW" not found; SQL statement:
 DROP TABLE `Paliwo Inne List View`  [42102-193]
+2019-01-08 20:23:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]
+2019-01-08 20:58:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Tabela "UBEZPIECZENIE" nie istnieje
+Table "UBEZPIECZENIE" not found; SQL statement:
+SELECT * FROM `Ubezpieczenie`  [42102-193]

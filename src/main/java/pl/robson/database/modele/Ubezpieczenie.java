@@ -14,12 +14,12 @@ import java.util.Date;
  * @author Mati
 */ 
 @DatabaseTable(tableName = "Ubezpieczenie")
-public class Ubezpieczenie {
+public class Ubezpieczenie implements BaseModel {
     
     @DatabaseField(generatedId = true)
     private int id;
     @DatabaseField(columnName = "Ubezpieczenie", canBeNull = false)
-    private int name;
+    private double name;
     
     @DatabaseField(columnName = "Data od :")
     private Date DataOD;
@@ -37,11 +37,11 @@ public class Ubezpieczenie {
         this.id = id;
     }
 
-    public int getName() {
+    public double getName() {
         return name;
     }
 
-    public void setName(int name) {
+    public void setName(double name) {
         this.name = name;
     }
 

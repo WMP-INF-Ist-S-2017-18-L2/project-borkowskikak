@@ -22,7 +22,7 @@ public class PojazdFX {
     private ObjectProperty<TypPojazduFX> TypPojazdu = new SimpleObjectProperty<>();
     private IntegerProperty id = new SimpleIntegerProperty();
     private SimpleStringProperty numerRejestracyjny = new SimpleStringProperty();
-    private SimpleStringProperty Ubezpieczenie = new SimpleStringProperty();
+    private ObjectProperty<UbezpieczenieFX> Ubezpieczenie = new SimpleObjectProperty<>();
     private SimpleStringProperty Leasing = new SimpleStringProperty();
     private SimpleStringProperty Amortyzacja = new SimpleStringProperty();
     private SimpleStringProperty PodatekSrodki = new SimpleStringProperty();
@@ -38,9 +38,6 @@ public class PojazdFX {
     }
        public void setLeasing(String Leasing) {
         this.Leasing.set(Leasing);
-    }
-    public void setUbezpieczenie(String Ubezpieczenie) {
-        this.Ubezpieczenie.set(Ubezpieczenie);
     }
     public ObjectProperty<FirmaFX> getFirmaProperty() {
         return Firma;
@@ -84,13 +81,7 @@ public class PojazdFX {
         this.numerRejestracyjny = numerRejestracyjny;
     }
 
-    public SimpleStringProperty getUbezpieczenieProperty() {
-        return Ubezpieczenie;
-    }
-
-    public void setUbezpieczenie(SimpleStringProperty Ubezpieczenie) {
-        this.Ubezpieczenie = Ubezpieczenie;
-    }
+    
 
     public SimpleStringProperty getLeasingProperty() {
         return Leasing;
@@ -104,9 +95,7 @@ public class PojazdFX {
     public String getPodatekSrodki(){
         return PodatekSrodki.get();
     }
-    public String getUbezpieczenie(){
-        return Ubezpieczenie.get();
-    }
+    
     public String getNumerRejestracyjny(){
         return numerRejestracyjny.get();
     }
@@ -141,6 +130,19 @@ public class PojazdFX {
         this.PodatekSrodki = PodatekSrodki;
     }
     
+    // nowe
     
+    
+    public UbezpieczenieFX getUbezpieczenie() {
+        return Ubezpieczenie.get();
+    }
+
+    public ObjectProperty<UbezpieczenieFX> ubezpieczenieProperty() {
+        return Ubezpieczenie;
+    }
+
+    public void setUbezpieczenie(UbezpieczenieFX ubezpieczenie) {
+        this.Ubezpieczenie.set(ubezpieczenie);
+    }
     
 }

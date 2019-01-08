@@ -27,10 +27,10 @@ public class paliwoInne implements BaseModel{
     private PobierajacyInne pobierajacy;
     
     @DatabaseField(columnName = "Iloœæ litrów")
-    private String iloscLitrowPaliwoInne ;
+    private double iloscLitrowPaliwoInne ;
     
     @DatabaseField(columnName = "Cena netto")
-    private String cenaNettoPaliwoInne ;
+    private double cenaNettoPaliwoInne ;
 
     public paliwoInne() {
     }
@@ -45,19 +45,19 @@ public class paliwoInne implements BaseModel{
 
     
 
-    public String getIloscLitrowPaliwoInne() {
+    public double getIloscLitrowPaliwoInne() {
         return iloscLitrowPaliwoInne;
     }
 
-    public void setIloscLitrowPaliwoInne(String iloscLitrowPaliwoInne) {
+    public void setIloscLitrowPaliwoInne(double iloscLitrowPaliwoInne) {
         this.iloscLitrowPaliwoInne = iloscLitrowPaliwoInne;
     }
 
-    public String getCenaNettoPaliwoInne() {
+    public double getCenaNettoPaliwoInne() {
         return cenaNettoPaliwoInne;
     }
 
-    public void setCenaNettoPaliwoInne(String cenaNettoPaliwoInne) {
+    public void setCenaNettoPaliwoInne(double cenaNettoPaliwoInne) {
         this.cenaNettoPaliwoInne = cenaNettoPaliwoInne;
     }
     public PobierajacyInne getPobierajacy() {

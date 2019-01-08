@@ -8,10 +8,12 @@ package pl.robson.Controllers;
 import ModeleFX.FirmaFX;
 import ModeleFX.PojazdModel;
 import ModeleFX.TypPojazduFX;
+import ModeleFX.UbezpieczenieModel;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.beans.property.Property;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -19,6 +21,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
+import javafx.util.converter.NumberStringConverter;
 import org.omg.CORBA.portable.ApplicationException;
 
 /**
@@ -64,6 +67,7 @@ public class PojazdController{
     private Button ClaearDanePojazdButton;
     
     private PojazdModel pojazdModel ;
+    private UbezpieczenieModel ubezpieczenieModel;
 
     @FXML
     public void initialize() {
@@ -80,18 +84,36 @@ public class PojazdController{
        this.pojazdModel.getPojazdFXObjectPropoerty().getTypPojazduProperty().bind(this.TypePojazdComboBox.valueProperty());
        this.pojazdModel.getPojazdFXObjectPropoerty().getLeasingProperty().bind(this.LeasingTextField.textProperty());
        this.pojazdModel.getPojazdFXObjectPropoerty().getAmortyzacjaProperty().bind(this.AmortyzacjaTextField.textProperty());
-       this.pojazdModel.getPojazdFXObjectPropoerty().getUbezpieczenieProperty().bind(this.UbezpieczenieTextField.textProperty());
+       this.UbezpieczenieTextField.textProperty().bindBidirectional(this.pojazdModel.getUbezpieczenieList().get
+      //this.pojazdModel.getPojazdFXObjectPropoerty().ubezpieczenieProperty().bind(this.UbezpieczenieTextField.textProperty());
        this.pojazdModel.getPojazdFXObjectPropoerty().getNumerRejestracyjnyProperty().bind(this.NumerRejstracyjnyTextField.textProperty());
        this.pojazdModel.getPojazdFXObjectPropoerty().getPodatekSrodkiProperty().bind(this.PodatekodSrTextField.textProperty());
-       
-      
-   
+       this.ZatwierdzPojazdButton.disableProperty().bind(this.NumerRejstracyjnyTextField.textProperty().isEmpty().or(this.CompanyComboBox.valueProperty().isNull().or(this.TypePojazdComboBox.valueProperty().isNull())));
+       this.cenaNettoPaliwoInneTextField.textProperty().bindBidirectional(this.paliwoInneModel.getPaliwoInneObjectProperty().get().getCenaNettoPaliwoInneTextField(), new NumberStringConverter());
+
 
     }    
 
     @FXML
     private void dodajPojazdDoDBB() throws ApplicationException {
         this.pojazdModel.savePojazdInDataBase();
+        this.AmortyzacjaTextField.clear();
+        this.LeasingTextField.clear();
+        this.NumerRejstracyjnyTextField.clear();
+        this.UbezpieczenieTextField.clear();
+        this.PodatekodSrTextField.clear();
+      
+    }
+    
+    @FXML
+    private void wyczyscPola(){
+        this.AmortyzacjaTextField.clear();
+        this.LeasingTextField.clear();
+        this.NumerRejstracyjnyTextField.clear();
+        this.UbezpieczenieTextField.clear();
+        this.PodatekodSrTextField.clear();
+        this.NumerRejstracyjnyTextField.clear();
+        
     }
     
 }

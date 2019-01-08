@@ -9,6 +9,7 @@ import ModeleFX.FirmaFX;
 import ModeleFX.PojazdFX;
 import ModeleFX.PojazdyListModel;
 import ModeleFX.TypPojazduFX;
+import ModeleFX.UbezpieczenieFX;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
@@ -44,7 +45,7 @@ public class PojazdyListController {
     //private TableColumn<PojazdFX,String> ZuzyciePaliwaColumn;
     
     @FXML
-    private TableColumn<PojazdFX,String> UbezpieczenieColumn;
+    private TableColumn<PojazdFX,UbezpieczenieFX> UbezpieczenieColumn;
             
     @FXML
     private TableColumn<PojazdFX,String> AmortyzacjaColumn;
@@ -86,11 +87,12 @@ public class PojazdyListController {
         this.TypePojazdComboBox.setItems(this.pojazdylistModel.getTypPojazduList());
         this.CompanyComboBox.setItems(this.pojazdylistModel.getFirmaList());
         
+        
         this.pojazdyTableView.setItems(this.pojazdylistModel.getPojazdFXObservableList());
         this.FirmaColumn.setCellValueFactory(cellData -> cellData.getValue().getFirmaProperty());
         this.TypPojazduColumn.setCellValueFactory(cellData -> cellData.getValue().getTypPojazduProperty());
         this.RejestracjaColumn.setCellValueFactory(cellData -> cellData.getValue().getNumerRejestracyjnyProperty());
-        this.UbezpieczenieColumn.setCellValueFactory(cellData -> cellData.getValue().getUbezpieczenieProperty());
+        this.UbezpieczenieColumn.setCellValueFactory(cellData -> cellData.getValue().ubezpieczenieProperty());
         this.AmortyzacjaColumn.setCellValueFactory(cellData -> cellData.getValue().getAmortyzacjaProperty());
         this.LeasingColumn.setCellValueFactory(cellData -> cellData.getValue().getLeasingProperty());
         this.PodatekodSRColumn.setCellValueFactory(cellData -> cellData.getValue().getPodatekSrodkiProperty());

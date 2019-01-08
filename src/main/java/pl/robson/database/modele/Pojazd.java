@@ -27,8 +27,8 @@ public class Pojazd implements BaseModel{
     @DatabaseField(columnName = "ZUZYCIE PALIWA", canBeNull = true)
     private String zuzyciePaliwa;
 
-    @DatabaseField(columnName = "UBEZPIECZENIE", canBeNull = true)
-    private String ubezpieczenie;
+    @DatabaseField(columnName = "UBEZPIECZENIE",canBeNull = true,foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true)
+    private Ubezpieczenie ubezpieczenie;
 
     @DatabaseField(columnName = "LEASING", canBeNull = true)
     private String leasing;
@@ -107,11 +107,11 @@ public class Pojazd implements BaseModel{
         this.zuzyciePaliwa = zuzyciePaliwa;
     }
 
-    public String getUbezpieczenie() {
+    public Ubezpieczenie getUbezpieczenie() {
         return ubezpieczenie;
     }
 
-    public void setUbezpieczenie(String ubezpieczenie) {
+    public void setUbezpieczenie(Ubezpieczenie ubezpieczenie) {
         this.ubezpieczenie = ubezpieczenie;
     }
 

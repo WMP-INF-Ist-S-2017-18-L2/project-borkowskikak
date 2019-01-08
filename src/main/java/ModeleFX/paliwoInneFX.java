@@ -6,8 +6,10 @@
 package ModeleFX;
 
 import java.time.LocalDate;
+import javafx.beans.property.DoubleProperty;
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
+import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -22,10 +24,10 @@ public class paliwoInneFX {
     private IntegerProperty id = new SimpleIntegerProperty();
     private ObjectProperty<LocalDate> dataPaliwoInneTabel = new SimpleObjectProperty<>();
     private ObjectProperty<pobierajacyInneFX> pobierajacyComboBox = new SimpleObjectProperty<>();
-    private SimpleStringProperty iloscLitrowPaliwoInneTextField = new SimpleStringProperty();
-    private SimpleStringProperty cenaNettoPaliwoInneTextField = new SimpleStringProperty();
+    private DoubleProperty iloscLitrowPaliwoInneTextField = new SimpleDoubleProperty();
+    private DoubleProperty cenaNettoPaliwoInneTextField = new SimpleDoubleProperty();
     private ObjectProperty<LocalDate> releaseDate = new SimpleObjectProperty<>();
-    private SimpleStringProperty kosztTextField = new SimpleStringProperty();
+    private DoubleProperty kosztTextField = new SimpleDoubleProperty();
 
     
     public IntegerProperty getId() {
@@ -46,24 +48,25 @@ public class paliwoInneFX {
 
     
 
-    public SimpleStringProperty getIloscLitrowPaliwoInneTextField() {
-        return iloscLitrowPaliwoInneTextField;
+    public SimpleDoubleProperty getIloscLitrowPaliwoInneTextField() {
+        return (SimpleDoubleProperty) iloscLitrowPaliwoInneTextField;
     }
 
-    public void setIloscLitrowPaliwoInneTextField(SimpleStringProperty iloscLitrowPaliwoInneTextField) {
+    public void setIloscLitrowPaliwoInneTextField(SimpleDoubleProperty iloscLitrowPaliwoInneTextField) {
         this.iloscLitrowPaliwoInneTextField = iloscLitrowPaliwoInneTextField;
     }
 
-    public SimpleStringProperty getCenaNettoPaliwoInneTextField() {
-        return cenaNettoPaliwoInneTextField;
+    public SimpleDoubleProperty getCenaNettoPaliwoInneTextField() {
+        return (SimpleDoubleProperty) cenaNettoPaliwoInneTextField;
     }
 
-    public void setCenaNettoPaliwoInneTextField(SimpleStringProperty cenaNettoPaliwoInneTextField) {
+    public void setCenaNettoPaliwoInneTextField(SimpleDoubleProperty cenaNettoPaliwoInneTextField) {
         this.cenaNettoPaliwoInneTextField = cenaNettoPaliwoInneTextField;
     }
 
-    public SimpleStringProperty getKoszt() {
-        return kosztTextField;
+    public SimpleDoubleProperty getKoszt() {
+        DoubleProperty il = new SimpleDoubleProperty(iloscLitrowPaliwoInneTextField.getValue()*cenaNettoPaliwoInneTextField.getValue());
+        return (SimpleDoubleProperty) il;    
     }
 
     public void setKoszt(IntegerProperty koszt) {
@@ -78,33 +81,33 @@ public class paliwoInneFX {
         this.id.set(id);
     }
 
-    public String iloscLitrowPaliwoInneTextField() {
+    public double iloscLitrowPaliwoInneTextField() {
         return iloscLitrowPaliwoInneTextField.get();
     }
 
-    public SimpleStringProperty iloscLitrowPaliwoInneTextFieldProperty() {
-        return iloscLitrowPaliwoInneTextField;
+    public SimpleDoubleProperty iloscLitrowPaliwoInneTextFieldProperty() {
+        return (SimpleDoubleProperty) iloscLitrowPaliwoInneTextField;
     }
     public ObjectProperty pobierajacyComboBbobox(){
         return pobierajacyComboBox;
     }
 
-    public void setiloscLitrowPaliwoInneTextField(String iloscLitrowPaliwoInneTextField) {
+    public void setiloscLitrowPaliwoInneTextField(double iloscLitrowPaliwoInneTextField) {
         this.iloscLitrowPaliwoInneTextField.set(iloscLitrowPaliwoInneTextField);
     }
 
-    public String getcenaNettoPaliwoInneTextField() {
+    public double getcenaNettoPaliwoInneTextField() {
         return cenaNettoPaliwoInneTextField.get();
     }
-    public String getiloscLitrowPaliwoInneTextField() {
+    public double getiloscLitrowPaliwoInneTextField() {
         return iloscLitrowPaliwoInneTextField.get();
     }
 
-    public StringProperty cenaNettoPaliwoInneTextFieldProperty() {
-        return cenaNettoPaliwoInneTextField;
+    public SimpleDoubleProperty cenaNettoPaliwoInneTextFieldProperty() {
+        return (SimpleDoubleProperty) cenaNettoPaliwoInneTextField;
     }
 
-    public void setcenaNettoPaliwoInneTextField(String cenaNettoPaliwoInneTextField) {
+    public void setcenaNettoPaliwoInneTextField(double cenaNettoPaliwoInneTextField) {
         this.cenaNettoPaliwoInneTextField.set(cenaNettoPaliwoInneTextField);
     }
 

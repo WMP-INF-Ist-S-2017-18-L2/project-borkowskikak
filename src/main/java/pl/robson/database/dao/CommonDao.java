@@ -23,9 +23,6 @@ public abstract class CommonDao {
     public CommonDao(ConnectionSource connectionSource) {
         this.connectionSource = connectionSource;
     }
-    
-    
-    
 
     public <T extends BaseModel, I> void creatOrUpdate(BaseModel baseModel) throws ApplicationException {
         Dao<T, I> dao = getDao((Class<T>) baseModel.getClass());
