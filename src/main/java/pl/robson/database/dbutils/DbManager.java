@@ -11,6 +11,7 @@ import pl.robson.database.modele.TypPojazdu;
 import java.io.IOException;
 import java.sql.SQLException;
 import pl.robson.database.modele.PobierajacyInne;
+import pl.robson.database.modele.Ubezpieczenie;
 import pl.robson.database.modele.paliwoInne;
 
 public class DbManager {
@@ -25,7 +26,7 @@ public class DbManager {
 
     public static void initDatabase(){
         createConnectionSource();
-        dropTable();
+        //dropTable();
         createTable();
         closeConnectionSource();
       
@@ -64,6 +65,8 @@ public class DbManager {
             TableUtils.createTableIfNotExists(connectionSource, Firma.class);
             TableUtils.createTableIfNotExists(connectionSource, PobierajacyInne.class);
             TableUtils.createTableIfNotExists(connectionSource, paliwoInne.class);
+            TableUtils.createTableIfNotExists(connectionSource, Ubezpieczenie.class);
+
 
 
         } catch (SQLException e) {
@@ -79,6 +82,7 @@ public class DbManager {
             TableUtils.dropTable(connectionSource, Firma.class,true);
             TableUtils.dropTable(connectionSource, PobierajacyInne.class,true);
             TableUtils.dropTable(connectionSource, paliwoInne.class,true);
+            TableUtils.dropTable(connectionSource, Ubezpieczenie.class,true);
 
 
         } catch (SQLException e) {

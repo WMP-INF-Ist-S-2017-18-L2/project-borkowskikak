@@ -28,7 +28,7 @@ import pl.robson.database.modele.Ubezpieczenie;
  */
 public class UbezpieczenieModel {
     private ObservableList<UbezpieczenieFX> ubezpieczenieObservableList = FXCollections.observableArrayList();
-    private ObjectProperty<UbezpieczenieFX> ubezpieczenieObjectProperty = new SimpleObjectProperty<>();
+    private ObjectProperty<UbezpieczenieFX> ubezpieczenieObjectProperty = new SimpleObjectProperty<>(new UbezpieczenieFX());
     
     
     public  void init() throws ApplicationException{

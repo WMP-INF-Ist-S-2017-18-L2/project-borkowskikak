@@ -76,5 +76,12 @@ public class UbezpieczenieFX {
         return doDate;
     }
 
+    @Override
+    public String toString() {
+        return this.wartosc.toString();
+    }
+    
+    
+
     
 }

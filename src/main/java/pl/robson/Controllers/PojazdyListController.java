@@ -76,6 +76,7 @@ public class PojazdyListController {
     private ComboBox<FirmaFX> CompanyComboBox; 
     
     private PojazdyListModel pojazdylistModel;
+    
     @FXML
     public void initialize(){
         this.pojazdylistModel = new PojazdyListModel();

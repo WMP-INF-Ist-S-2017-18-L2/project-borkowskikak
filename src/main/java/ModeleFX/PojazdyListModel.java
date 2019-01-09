@@ -11,13 +11,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import org.omg.CORBA.portable.ApplicationException;
 import pl.robson.Utils.Converters.ConverterPojazd;
+import pl.robson.Utils.Utils;
 import pl.robson.database.dao.FirmaDao;
 import pl.robson.database.dao.PojazdDao;
 import pl.robson.database.dao.TypPojazdDao;
+import pl.robson.database.dao.UbezpieczenieDao;
 import pl.robson.database.dbutils.DbManager;
 import pl.robson.database.modele.Firma;
 import pl.robson.database.modele.Pojazd;
 import pl.robson.database.modele.TypPojazdu;
+import pl.robson.database.modele.Ubezpieczenie;
 
 /**
  *
@@ -28,6 +31,7 @@ public class PojazdyListModel {
     private ObservableList<PojazdFX> pojazdFXObservableList = FXCollections.observableArrayList();
     private ObservableList<TypPojazduFX> TypPojazduList = FXCollections.observableArrayList();
     private ObservableList<FirmaFX> FirmaList = FXCollections.observableArrayList();
+    private ObservableList<UbezpieczenieFX> UbezpieczenieList = FXCollections.observableArrayList();
     
     private List<PojazdFX> PojazdFxList = new ArrayList<>();
     
@@ -40,8 +44,11 @@ public class PojazdyListModel {
             
         });
             this.pojazdFXObservableList.setAll(PojazdFxList);
+            
+            
         initFirmaList();
         initTypPojazduList();
+        initUbezpieczenie();
        DbManager.closeConnectionSource();
         
     }
@@ -81,6 +88,23 @@ public class PojazdyListModel {
         DbManager.closeConnectionSource();
     
     }
+     private void initUbezpieczenie() throws ApplicationException{
+        UbezpieczenieDao ubezpieczenieDao = new UbezpieczenieDao(DbManager.getConnectionSource());
+        List<Ubezpieczenie> ubezpieczenieList = ubezpieczenieDao.queryForAll(Ubezpieczenie.class);
+        UbezpieczenieList.clear();
+        ubezpieczenieList.forEach(ubezpieczenie->{
+            UbezpieczenieFX ubezpieczenieFX = new UbezpieczenieFX();
+            ubezpieczenieFX.setId(ubezpieczenie.getId());
+            ubezpieczenieFX.setUbezpieczenie(ubezpieczenie.getName());
+            ubezpieczenieFX.setOdDate(Utils.convertToLocalDate(ubezpieczenie.getDataDO()));
+            ubezpieczenieFX.setDoDate(Utils.convertToLocalDate(ubezpieczenie.getDataOD()));
+            
+            UbezpieczenieList.add(ubezpieczenieFX);
+            
+        });
+        DbManager.closeConnectionSource();
+    }
+    
 
     public ObservableList<TypPojazduFX> getTypPojazduList() {
         return TypPojazduList;

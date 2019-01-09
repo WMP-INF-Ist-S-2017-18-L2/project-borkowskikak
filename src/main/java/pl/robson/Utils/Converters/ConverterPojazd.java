@@ -21,10 +21,11 @@ public class ConverterPojazd {
     pojazd.setLeasing(pojazdFX.getLeasing());
     pojazd.setAmortyzacja(pojazdFX.getAmortyzacja());
     pojazd.setPodatek(pojazdFX.getPodatekSrodki());
+    pojazd.setUbezpieczenie(ConverterUbezpieczenie.convertToubezpieczenie(pojazdFX.getUbezpieczenie()));
     return pojazd;
     }
     
-    public static PojazdFX convertToPojazdFX(Pojazd pojazd){
+    public static PojazdFX convertToPojazdFX(Pojazd pojazd){         
     PojazdFX pojazdFX = new PojazdFX();
     pojazdFX.setFirmaFX(ConverterFirma.convertToFirmaFX(pojazd.getFirma()));
     pojazdFX.setTypPojazduFX(ConverterTypPojazdu.convertToTypPojazduFX(pojazd.getTypPojazdu()));

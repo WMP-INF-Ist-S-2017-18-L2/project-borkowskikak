@@ -60,4 +60,8 @@ public class Firma implements BaseModel{
     public void setFirma(String name) {
         this.name = name;
     }
+
+  
+    
+    
 }
