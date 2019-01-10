@@ -92,6 +92,9 @@ public class PaliwoInneController{
             this.iloscLitrowPaliwoInneTextField.textProperty().bindBidirectional(this.paliwoInneModel.getPaliwoInneObjectProperty().get().getIloscLitrowPaliwoInneTextField(), new NumberStringConverter());
             this.cenaNettoPaliwoInneTextField.textProperty().bindBidirectional(this.paliwoInneModel.getPaliwoInneObjectProperty().get().getCenaNettoPaliwoInneTextField(), new NumberStringConverter());
             this.paliwoInneModel.paliwoInneObjectProperty.get().releaseDateProperty().bind(this.releaseDatePicker.valueProperty());
+            
+            
+            
             this.paliwoInneTableView.setItems(this.paliwoInneModel.getPaliwoInneFXObservableList());
             this.litryPaliwoInneTableView.setCellValueFactory(cellData->cellData.getValue().getIloscLitrowPaliwoInneTextField());
             this.cenaNettoPaliwoInneTableView.setCellValueFactory(cellData->cellData.getValue().getCenaNettoPaliwoInneTextField());

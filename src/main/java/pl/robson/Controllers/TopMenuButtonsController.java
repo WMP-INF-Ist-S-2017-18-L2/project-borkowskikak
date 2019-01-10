@@ -51,6 +51,9 @@ public class TopMenuButtonsController {
 
     public void openFirmaTYP(){
         mainController.setCenter(FXML_ADD_FIRMATYP);
+        if(toggleButtons.getSelectedToggle()!=null){
+            toggleButtons.getSelectedToggle().setSelected(false);
+        }
     }
     
     public void Exit() {

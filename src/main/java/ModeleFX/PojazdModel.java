@@ -156,6 +156,12 @@ public class PojazdModel {
     public PojazdFX getPojazdFXObjectPropoerty(){
         return pojazdFXObjectProperty.get();
     }
+
+    public void setPojazdFXObjectProperty(PojazdFX pojazdFXObjectProperty) {
+        this.pojazdFXObjectProperty.set(pojazdFXObjectProperty);
+    }
+    
+    
     
     
 

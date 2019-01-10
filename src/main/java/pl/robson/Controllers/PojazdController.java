@@ -83,22 +83,18 @@ public class PojazdController{
             Logger.getLogger(PojazdController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        this.ubezpieczenieModel = new UbezpieczenieModel();
-        this.ubezpieczenieModel.init();
+       this.ubezpieczenieModel = new UbezpieczenieModel();
+       this.ubezpieczenieModel.init();
        this.TypePojazdComboBox.setItems(this.pojazdModel.getTypPojazduList());
        this.CompanyComboBox.setItems(this.pojazdModel.getFirmaList());
-       
-       BindFields();
+
        this.ubezpieczenieModel = new UbezpieczenieModel();
        this.ubezpieczenieModel.init(); 
-       this.ubezpieczenieModel.ubezpieczenieObjectProperty().get().odDateProperty().bind(this.UbezpieczenieODDate.valueProperty());
-       this.ubezpieczenieModel.ubezpieczenieObjectProperty().get().doDateProperty().bind(this.UbezpieczenieDODate.valueProperty());
-       
-       this.UbezpieczenieTextField.textProperty().bindBidirectional(this.ubezpieczenieModel.ubezpieczenieObjectProperty().get().ubezpieczenieProperty(), new NumberStringConverter());   
-       this.pojazdModel.getPojazdFXObjectPropoerty().ubezpieczenieProperty().setValue(this.ubezpieczenieModel.getUbezpieczenieObject());
+
+       BindFields();
     }    
 
-    private void BindFields() {
+    public void BindFields() {
         this.pojazdModel.getPojazdFXObjectPropoerty().getFirmaProperty().bind(this.CompanyComboBox.valueProperty());
         this.pojazdModel.getPojazdFXObjectPropoerty().getTypPojazduProperty().bind(this.TypePojazdComboBox.valueProperty());
         this.pojazdModel.getPojazdFXObjectPropoerty().getLeasingProperty().bind(this.LeasingTextField.textProperty());
@@ -106,6 +102,12 @@ public class PojazdController{
         this.pojazdModel.getPojazdFXObjectPropoerty().getNumerRejestracyjnyProperty().bind(this.NumerRejstracyjnyTextField.textProperty());
         this.pojazdModel.getPojazdFXObjectPropoerty().getPodatekSrodkiProperty().bind(this.PodatekodSrTextField.textProperty());
         this.ZatwierdzPojazdButton.disableProperty().bind(this.NumerRejstracyjnyTextField.textProperty().isEmpty().or(this.CompanyComboBox.valueProperty().isNull().or(this.TypePojazdComboBox.valueProperty().isNull())));
+    
+        this.ubezpieczenieModel.ubezpieczenieObjectProperty().get().odDateProperty().bind(this.UbezpieczenieODDate.valueProperty());
+        this.ubezpieczenieModel.ubezpieczenieObjectProperty().get().doDateProperty().bind(this.UbezpieczenieDODate.valueProperty());
+       
+        this.UbezpieczenieTextField.textProperty().bindBidirectional(this.ubezpieczenieModel.ubezpieczenieObjectProperty().get().ubezpieczenieProperty(), new NumberStringConverter());   
+        this.pojazdModel.getPojazdFXObjectPropoerty().ubezpieczenieProperty().setValue(this.ubezpieczenieModel.getUbezpieczenieObject());
     }
 
     @FXML
@@ -134,6 +136,16 @@ public class PojazdController{
         this.PodatekodSrTextField.clear();
         this.NumerRejstracyjnyTextField.clear();       
     } 
+
+    public PojazdModel getPojazdModel() {
+        return pojazdModel;
+    }
+
+    public void setPojazdModel(PojazdModel pojazdModel) {
+        this.pojazdModel = pojazdModel;
+    }
+
+
 }
 
 

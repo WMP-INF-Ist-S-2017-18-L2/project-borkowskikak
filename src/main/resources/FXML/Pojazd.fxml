@@ -75,7 +75,7 @@
             <ContextMenu>
               <items>
                 <MenuItem mnemonicParsing="false" text="Paliwo" />
-                  <MenuItem mnemonicParsing="false" text="Ubezpieczenie" />
+                  <MenuItem mnemonicParsing="false" onAction="#goToUpdateUbezpieczenie" text="Ubezpieczenie" />
                   <MenuItem mnemonicParsing="false" text="Amortyzacja" />
                   <MenuItem mnemonicParsing="false" text="Warsztat" />
                   <MenuItem mnemonicParsing="false" text="Leasing" />
