@@ -5,20 +5,23 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.robson.Controllers.PojazdController">
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pl.robson.Controllers.PojazdController">
    <children>
-      <GridPane prefHeight="800.0" prefWidth="1017.0">
+      <GridPane maxWidth="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1017.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="390.0" minWidth="10.0" prefWidth="178.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="438.0" minWidth="0.0" prefWidth="101.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="438.0" minWidth="10.0" prefWidth="160.0" />
-            <ColumnConstraints hgrow="SOMETIMES" maxWidth="438.0" minWidth="10.0" prefWidth="175.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="390.0" minWidth="10.0" prefWidth="117.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="438.0" minWidth="0.0" prefWidth="148.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="438.0" minWidth="10.0" prefWidth="169.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="438.0" minWidth="10.0" prefWidth="169.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="438.0" minWidth="10.0" prefWidth="354.0" />
         </columnConstraints>
         <rowConstraints>
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -40,7 +43,7 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Podatek od środków transportu" GridPane.rowIndex="6">
+            <Label text="Podatek od śr" GridPane.rowIndex="6">
                <padding>
                   <Insets left="10.0" />
                </padding>
@@ -55,14 +58,14 @@
                   <Insets left="10.0" />
                </GridPane.margin>
             </Label>
-            <DatePicker fx:id="UbezpieczenieDODate" prefWidth="130.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <DatePicker fx:id="UbezpieczenieDODate" prefWidth="130.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <GridPane.margin>
-                  <Insets left="35.0" />
+                  <Insets left="35.0" top="30.0" />
                </GridPane.margin>
             </DatePicker>
             <DatePicker fx:id="UbezpieczenieODDate" prefHeight="25.0" prefWidth="130.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <GridPane.margin>
-                  <Insets left="35.0" />
+                  <Insets bottom="30.0" left="35.0" />
                </GridPane.margin>
                <opaqueInsets>
                   <Insets />
@@ -70,32 +73,32 @@
             </DatePicker>
             <DatePicker fx:id="LeasingODDate" prefHeight="23.0" prefWidth="130.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <GridPane.margin>
-                  <Insets left="35.0" />
+                  <Insets bottom="30.0" left="35.0" />
                </GridPane.margin>
             </DatePicker>
-            <DatePicker fx:id="LeasingDODate" prefWidth="130.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <DatePicker fx:id="LeasingDODate" prefWidth="130.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <GridPane.margin>
-                  <Insets left="35.0" />
+                  <Insets left="35.0" top="30.0" />
                </GridPane.margin>
             </DatePicker>
             <DatePicker fx:id="AmortyzacjaODDate" prefHeight="19.0" prefWidth="130.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                <GridPane.margin>
-                  <Insets left="35.0" />
+                  <Insets bottom="30.0" left="35.0" />
                </GridPane.margin>
             </DatePicker>
-            <DatePicker fx:id="AmortyzacjaDODate" prefWidth="130.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+            <DatePicker fx:id="AmortyzacjaDODate" prefWidth="130.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                <GridPane.margin>
-                  <Insets left="35.0" />
+                  <Insets left="35.0" top="30.0" />
                </GridPane.margin>
             </DatePicker>
             <DatePicker fx:id="PodatekOdSrODDate" prefWidth="130.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <GridPane.margin>
-                  <Insets left="35.0" />
+                  <Insets bottom="30.0" left="35.0" />
                </GridPane.margin>
             </DatePicker>
-            <DatePicker fx:id="PodatekOdSrDODate" prefWidth="130.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
+            <DatePicker fx:id="PodatekOdSrDODate" prefWidth="130.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <GridPane.margin>
-                  <Insets left="35.0" />
+                  <Insets left="35.0" top="30.0" />
                </GridPane.margin>
             </DatePicker>
             <Label prefHeight="17.0" prefWidth="72.0" text="Typ pojazdu">
@@ -117,42 +120,45 @@
             <ComboBox fx:id="CompanyComboBox" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
             <Label text="Od :" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets bottom="30.0" left="10.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Do :" GridPane.columnIndex="3" GridPane.rowIndex="3">
+            <Label text="Do :" GridPane.columnIndex="2" GridPane.rowIndex="3">
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0" top="30.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Do :" GridPane.columnIndex="3" GridPane.rowIndex="4">
+            <Label text="Do :" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets left="10.0" top="30.0" />
                </GridPane.margin>
             </Label>
-            <Label text="Do :" GridPane.columnIndex="3" GridPane.rowIndex="5">
+            <Label text="Do :" GridPane.columnIndex="2" GridPane.rowIndex="5">
                <padding>
                   <Insets left="10.0" />
                </padding>
+               <GridPane.margin>
+                  <Insets top="30.0" />
+               </GridPane.margin>
             </Label>
-            <Label text="Do :" GridPane.columnIndex="3" GridPane.rowIndex="6">
+            <Label text="Do :" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <padding>
-                  <Insets left="10.0" />
+                  <Insets left="10.0" top="30.0" />
                </padding>
             </Label>
             <Label text="Od :" GridPane.columnIndex="2" GridPane.rowIndex="4">
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets bottom="30.0" left="10.0" />
                </GridPane.margin>
             </Label>
             <Label text="Od :" GridPane.columnIndex="2" GridPane.rowIndex="5">
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets bottom="30.0" left="10.0" />
                </GridPane.margin>
             </Label>
             <Label text="Od :" GridPane.columnIndex="2" GridPane.rowIndex="6">
                <GridPane.margin>
-                  <Insets left="10.0" />
+                  <Insets bottom="30.0" left="10.0" />
                </GridPane.margin>
             </Label>
             <Button fx:id="ZatwierdzPojazdButton" mnemonicParsing="false" onAction="#dodajPojazdDoDBB" prefHeight="25.0" prefWidth="88.0" text="Dodaj" GridPane.columnIndex="3">
@@ -163,6 +169,94 @@
                <GridPane.margin>
                   <Insets />
                </GridPane.margin></Button>
+            <TableView fx:id="dodajPaliwoTableView" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+              <columns>
+                <TableColumn fx:id="DodajPaliwoDataTableView" prefWidth="75.0" text="Data" />
+                <TableColumn fx:id="DodajPaliwoIloscTableView" prefWidth="75.0" text="Ilosc" />
+                  <TableColumn fx:id="DodajPalwioCenaTableView" prefWidth="75.0" text="Cena" />
+                  <TableColumn fx:id="DodajPaliwoPrzebiegTableView" prefWidth="75.0" text="Przebieg" />
+              </columns>
+               <GridPane.margin>
+                  <Insets top="30.0" />
+               </GridPane.margin>
+            </TableView>
+            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+              <columns>
+                <TableColumn prefWidth="149.0" text="Data" />
+                <TableColumn prefWidth="207.0" text="Koszt opłaty drogowej" />
+              </columns>
+               <GridPane.margin>
+                  <Insets top="30.0" />
+               </GridPane.margin>
+            </TableView>
+            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+              <columns>
+                <TableColumn prefWidth="150.0" text="Data" />
+                <TableColumn minWidth="0.0" prefWidth="206.0" text="Przychód pojazdu" />
+              </columns>
+               <GridPane.margin>
+                  <Insets top="30.0" />
+               </GridPane.margin>
+            </TableView>
+            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+              <columns>
+                <TableColumn prefWidth="149.0" text="Data" />
+                <TableColumn prefWidth="207.0" text="Wypłata dla kierowcy" />
+              </columns>
+               <GridPane.margin>
+                  <Insets top="30.0" />
+               </GridPane.margin>
+            </TableView>
+            <DatePicker fx:id="DodajPaliwoDatePicker" prefHeight="25.0" prefWidth="76.0" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="45.0" />
+               </GridPane.margin>
+            </DatePicker>
+            <TextField fx:id="DodajPaliwoIlosc" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="76.0" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="45.0" left="76.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="DodajPaliwoCena" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="76.0" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="45.0" left="152.0" />
+               </GridPane.margin>
+            </TextField>
+            <TextField fx:id="DodajPaliwoPrzebieg" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="76.0" GridPane.columnIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="45.0" left="228.0" />
+               </GridPane.margin>
+            </TextField>
+            <DatePicker prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="45.0" />
+               </GridPane.margin>
+            </DatePicker>
+            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="174.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets bottom="45.0" left="149.0" />
+               </GridPane.margin>
+            </TextField>
+            <DatePicker prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="45.0" />
+               </GridPane.margin>
+            </DatePicker>
+            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="174.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets bottom="45.0" left="149.0" />
+               </GridPane.margin>
+            </TextField>
+            <DatePicker prefHeight="25.0" prefWidth="149.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets bottom="45.0" />
+               </GridPane.margin>
+            </DatePicker>
+            <TextField maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="25.0" prefWidth="174.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets bottom="45.0" left="149.0" />
+               </GridPane.margin>
+            </TextField>
          </children>
       </GridPane>
    </children>

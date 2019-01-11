@@ -1,6 +1,7 @@
 package pl.robson.database.modele;
 import com.j256.ormlite.field.DatabaseField;
 import com.j256.ormlite.table.DatabaseTable;
+import java.util.Date;
 
 @DatabaseTable(tableName = "PALIWO")
 public class Paliwo implements BaseModel{
@@ -10,47 +11,59 @@ public class Paliwo implements BaseModel{
 
     @DatabaseField(generatedId = true)
     private int id;
+    
+    @DatabaseField(columnName = "Data dodania : ", canBeNull = true)
+    private Date dataDodaniaPaliwa;
 
-    @DatabaseField(columnName = "PALIWO[L]", canBeNull = false)
-    private int iloscPaliwa;
+    @DatabaseField(columnName = "PALIWO[L]", canBeNull = true)
+    private double iloscPaliwa;
+    
+    @DatabaseField(columnName = "Cena za litr", canBeNull = true)
+    private double cenazaLitr;
 
-    @DatabaseField(columnName = "Przebieg",canBeNull = false)
-    private int przebieg;
+    @DatabaseField(columnName = "Przebieg",canBeNull = true)
+    private double przebieg;
 
-    @DatabaseField(columnName = "Zuzycie paliwa", canBeNull = false)
-    private int zuzyciePaliwa;
-
-    public int getId() {
-        return id;
-    }
+    public int getId() {return id;}
 
     public void setId(int id) {
         this.id = id;
     }
 
-    public int getIloscPaliwa() {
+    public double getIloscPaliwa() {
         return iloscPaliwa;
     }
 
-    public void setIloscPaliwa(int iloscPaliwa) {
+    public void setIloscPaliwa(double iloscPaliwa) {
         this.iloscPaliwa = iloscPaliwa;
     }
 
-    public int getPrzebieg() {
+    public double getPrzebieg() {
         return przebieg;
     }
 
-    public void setPrzebieg(int przebieg) {
+    public void setPrzebieg(double przebieg) {
         this.przebieg = przebieg;
     }
 
-    public int getZuzyciePaliwa() {
-        return zuzyciePaliwa;
+
+    public Date getDataDodaniaPaliwa() {
+        return dataDodaniaPaliwa;
     }
 
-    public void setZuzyciePaliwa(int zuzyciePaliwa) {
-        this.zuzyciePaliwa = zuzyciePaliwa;
+    public void setDataDodaniaPaliwa(Date dataDodaniaPaliwa) {
+        this.dataDodaniaPaliwa = dataDodaniaPaliwa;
     }
+
+    public double getCenazaLitr() {
+        return cenazaLitr;
+    }
+
+    public void setCenazaLitr(double cenazaLitr) {
+        this.cenazaLitr = cenazaLitr;
+    }
+    
+    
 
    
 }

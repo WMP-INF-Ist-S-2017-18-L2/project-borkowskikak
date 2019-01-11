@@ -18,14 +18,8 @@ public class Pojazd implements BaseModel{
     @DatabaseField(columnName = "FIRMA",canBeNull = true,foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true)
     private Firma firma;
 
-    @DatabaseField(columnName = "PALIWO[L}", canBeNull = true)
-    private String iloscPaliwa;
-
-    @DatabaseField(columnName = "PRZEBIEG",canBeNull = true)
-    private String przebieg;
-
-    @DatabaseField(columnName = "ZUZYCIE PALIWA", canBeNull = true)
-    private String zuzyciePaliwa;
+    @DatabaseField(columnName = "PALIWO", canBeNull = true,foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true)
+    private Paliwo paliwo;
 
     @DatabaseField(columnName = "UBEZPIECZENIE",canBeNull = true,foreign = true, foreignAutoRefresh = true, foreignAutoCreate = true)
     private Ubezpieczenie ubezpieczenie;
@@ -81,30 +75,12 @@ public class Pojazd implements BaseModel{
         this.typPojazdu = typPojazdu;
     }
 
-    
-
-    public String getIloscPaliwa() {
-        return iloscPaliwa;
+    public Paliwo getPaliwo() {
+        return paliwo;
     }
 
-    public void setIloscPaliwa(String iloscPaliwa) {
-        this.iloscPaliwa = iloscPaliwa;
-    }
-
-    public String getPrzebieg() {
-        return przebieg;
-    }
-
-    public void setPrzebieg(String przebieg) {
-        this.przebieg = przebieg;
-    }
-
-    public String getZuzyciePaliwa() {
-        return zuzyciePaliwa;
-    }
-
-    public void setZuzyciePaliwa(String zuzyciePaliwa) {
-        this.zuzyciePaliwa = zuzyciePaliwa;
+    public void setPaliwo(Paliwo paliwo) {
+        this.paliwo = paliwo;
     }
 
     public Ubezpieczenie getUbezpieczenie() {

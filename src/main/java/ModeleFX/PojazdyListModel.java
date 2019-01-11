@@ -13,11 +13,13 @@ import org.omg.CORBA.portable.ApplicationException;
 import pl.robson.Utils.Converters.ConverterPojazd;
 import pl.robson.Utils.Utils;
 import pl.robson.database.dao.FirmaDao;
+import pl.robson.database.dao.PaliwoDao;
 import pl.robson.database.dao.PojazdDao;
 import pl.robson.database.dao.TypPojazdDao;
 import pl.robson.database.dao.UbezpieczenieDao;
 import pl.robson.database.dbutils.DbManager;
 import pl.robson.database.modele.Firma;
+import pl.robson.database.modele.Paliwo;
 import pl.robson.database.modele.Pojazd;
 import pl.robson.database.modele.TypPojazdu;
 import pl.robson.database.modele.Ubezpieczenie;
@@ -32,7 +34,8 @@ public class PojazdyListModel {
     private ObservableList<TypPojazduFX> TypPojazduList = FXCollections.observableArrayList();
     private ObservableList<FirmaFX> FirmaList = FXCollections.observableArrayList();
     private ObservableList<UbezpieczenieFX> UbezpieczenieList = FXCollections.observableArrayList();
-    
+    private ObservableList<PaliwoFX> PaliwoList = FXCollections.observableArrayList();
+
     private List<PojazdFX> PojazdFxList = new ArrayList<>();
     
     
@@ -49,12 +52,11 @@ public class PojazdyListModel {
         initFirmaList();
         initTypPojazduList();
         initUbezpieczenie();
-       DbManager.closeConnectionSource();
+        initPaliwoList();
+        DbManager.closeConnectionSource();
         
     }
 
-   
-    
      private void initTypPojazduList() throws ApplicationException {
         TypPojazdDao typPojazdDao = new TypPojazdDao(DbManager.getConnectionSource());
         List<TypPojazdu> typPojazduList = typPojazdDao.queryForAll(TypPojazdu.class);
@@ -105,6 +107,23 @@ public class PojazdyListModel {
         DbManager.closeConnectionSource();
     }
     
+     private void initPaliwoList() throws ApplicationException{
+        PaliwoDao paliwoDao = new PaliwoDao(DbManager.getConnectionSource());
+        List<Paliwo> listPaliwo = paliwoDao.queryForAll(Paliwo.class);
+        PaliwoList.clear();
+        listPaliwo.forEach(c->{
+        
+            PaliwoFX paliwoFX = new PaliwoFX();
+            paliwoFX.setId(c.getId());
+            paliwoFX.setIloscpaliwa(c.getIloscPaliwa());
+            paliwoFX.setPrzebieg(c.getPrzebieg());
+            paliwoFX.setDataDodania(Utils.convertToLocalDate(c.getDataDodaniaPaliwa()));
+            this.PaliwoList.add(paliwoFX);
+        
+        });
+        
+        DbManager.closeConnectionSource();
+     }
 
     public ObservableList<TypPojazduFX> getTypPojazduList() {
         return TypPojazduList;
@@ -127,6 +146,30 @@ public class PojazdyListModel {
 
     public void setPojazdFXObservableList(ObservableList<PojazdFX> pojazdFXObservableList) {
         this.pojazdFXObservableList = pojazdFXObservableList;
+    }
+
+    public ObservableList<UbezpieczenieFX> getUbezpieczenieList() {
+        return UbezpieczenieList;
+    }
+
+    public void setUbezpieczenieList(ObservableList<UbezpieczenieFX> UbezpieczenieList) {
+        this.UbezpieczenieList = UbezpieczenieList;
+    }
+
+    public ObservableList<PaliwoFX> getPaliwoList() {
+        return PaliwoList;
+    }
+
+    public void setPaliwoList(ObservableList<PaliwoFX> PaliwoList) {
+        this.PaliwoList = PaliwoList;
+    }
+
+    public List<PojazdFX> getPojazdFxList() {
+        return PojazdFxList;
+    }
+
+    public void setPojazdFxList(List<PojazdFX> PojazdFxList) {
+        this.PojazdFxList = PojazdFxList;
     }
    
     

@@ -17,7 +17,6 @@ import pl.robson.database.modele.Ubezpieczenie;
  */
 public class ConverterUbezpieczenie {
     public static UbezpieczenieFX convertToubezpieczenieFX(Ubezpieczenie ubezpieczenie){
-        System.out.println(ubezpieczenie.getName()+"!!!!!!!!!!!!!!!!!!!!!!!");
         UbezpieczenieFX ubezpieczenieFX = new UbezpieczenieFX();
         ubezpieczenieFX.setId(ubezpieczenie.getId());
         ubezpieczenieFX.setUbezpieczenie(ubezpieczenie.getName());

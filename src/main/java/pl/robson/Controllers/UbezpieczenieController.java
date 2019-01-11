@@ -47,10 +47,12 @@ public class UbezpieczenieController{
             Logger.getLogger(UbezpieczenieController.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-       // this.UbezpieczenieTableView.setItems(this.pojazdModel.getUbezpieczenieList());
-//        this.wartoscTableColumn.setCellValueFactory(cellData -> cellData.getValue().ubezpieczenieProperty());
- //       this.DataODTableColumn.setCellValueFactory(cellData->cellData.getValue().odDateProperty());
- //       this.DataDoTableColumn.setCellValueFactory(cellData->cellData.getValue().doDateProperty());
+        
+        
+       this.UbezpieczenieTableView.setItems(this.pojazdModel.getUbezpieczenieList());
+       this.wartoscTableColumn.setCellValueFactory(cellData -> cellData.getValue().ubezpieczenieProperty());
+       this.DataODTableColumn.setCellValueFactory(cellData->cellData.getValue().odDateProperty());
+       this.DataDoTableColumn.setCellValueFactory(cellData->cellData.getValue().doDateProperty());
 
         
 
