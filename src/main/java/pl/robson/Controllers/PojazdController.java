@@ -149,15 +149,15 @@ public class PojazdController{
         this.UbezpieczenieTextField.textProperty().bindBidirectional(this.ubezpieczenieModel.ubezpieczenieObjectProperty().get().ubezpieczenieProperty(), new NumberStringConverter());   
         this.pojazdModel.getPojazdFXObjectPropoerty().ubezpieczenieProperty().setValue(this.ubezpieczenieModel.getUbezpieczenieObject());
         this.pojazdModel.getPojazdFXObjectPropoerty().paliwoPojazduProperty().setValue(this.paliwoModel.getPaliwoProperty());
-//        this.pojazdModel.getPojazdFXObjectPropoerty().getAmortyzacjaProperty().bind(this.AmortyzacjaTextField.textProperty());
-//        this.paliwoModel.paliwoPropertyProperty().get().dataDodaniaProperty().bind(this.DodajPaliwoDatePicker.valueProperty());
-//        this.ubezpieczenieModel.ubezpieczenieObjectProperty().get().odDateProperty().bind(this.UbezpieczenieODDate.valueProperty());
-//        this.ubezpieczenieModel.ubezpieczenieObjectProperty().get().doDateProperty().bind(this.UbezpieczenieDODate.valueProperty());
-//        this.pojazdModel.getPojazdFXObjectPropoerty().getNumerRejestracyjnyProperty().bind(this.NumerRejstracyjnyTextField.textProperty());
+        this.pojazdModel.getPojazdFXObjectPropoerty().getNumerRejestracyjnyProperty().bind(this.NumerRejstracyjnyTextField.textProperty());
+        //this.ubezpieczenieModel.ubezpieczenieObjectProperty().get().odDateProperty().bind(this.UbezpieczenieODDate.valueProperty());
+       // this.ubezpieczenieModel.ubezpieczenieObjectProperty().get().doDateProperty().bind(this.UbezpieczenieDODate.valueProperty());              
 //        this.pojazdModel.getPojazdFXObjectPropoerty().getPodatekSrodkiProperty().bind(this.PodatekodSrTextField.textProperty());
 //        this.pojazdModel.getPojazdFXObjectPropoerty().getTypPojazduProperty().bind(this.TypePojazdComboBox.valueProperty());
 //        this.pojazdModel.getPojazdFXObjectPropoerty().getFirmaProperty().bind(this.CompanyComboBox.valueProperty());        
 //        this.pojazdModel.getPojazdFXObjectPropoerty().getLeasingProperty().bind(this.LeasingTextField.textProperty());
+//        this.pojazdModel.getPojazdFXObjectPropoerty().getAmortyzacjaProperty().bind(this.AmortyzacjaTextField.textProperty());
+//        this.paliwoModel.paliwoPropertyProperty().get().dataDodaniaProperty().bind(this.DodajPaliwoDatePicker.valueProperty());
           this.paliwoModel.init();
     }
 

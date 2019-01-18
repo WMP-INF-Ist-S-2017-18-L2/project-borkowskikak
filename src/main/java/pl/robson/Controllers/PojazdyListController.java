@@ -131,7 +131,7 @@ public class PojazdyListController {
                 if(!empty){
                 setGraphic(button);
                 button.setOnAction(event -> {
-                    FXMLLoader loader = FxmlUtils.getLoader("/FXML/AddCar.fxml");
+                    FXMLLoader loader = FxmlUtils.getLoader("/FXML/Paliwo.fxml");
                     Scene scena = null;
                 try {
                     scena = new Scene(loader.load());
@@ -140,11 +140,6 @@ public class PojazdyListController {
                 }        
                 PojazdController controller = loader.getController();
                 controller.getPojazdModel().setPojazdFXObjectProperty(item);
-                    try {
-                        controller.BindFields();
-                    } catch (ApplicationException ex) {
-                        Logger.getLogger(PojazdyListController.class.getName()).log(Level.SEVERE, null, ex);
-                    }
                 Stage stage = new Stage();
                 stage.setScene(scena);
                 stage.initModality(Modality.APPLICATION_MODAL);

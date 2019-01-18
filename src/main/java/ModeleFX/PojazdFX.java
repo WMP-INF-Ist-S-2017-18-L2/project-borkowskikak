@@ -65,9 +65,7 @@ public class PojazdFX {
     public void setPaliwoPojazdu(PaliwoFX paliwoPojazdu) {this.PaliwoPojazdu.set(paliwoPojazdu);}
 
     @Override
-    public String toString() {
-        return PaliwoPojazdu.getValue().toString();
-    }
+    public String toString() { return PaliwoPojazdu.getValue().toString();}
     
     
     
